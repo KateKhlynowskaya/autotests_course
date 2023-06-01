@@ -12,6 +12,7 @@ string = 'Hello'
 
 
 def global_changes():
+    """изменит значение глобальной переменной и вернет новое значение"""
     global number, string
     number = 5
     string = 'Hello, dear friend'
