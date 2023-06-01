@@ -25,44 +25,51 @@
 
 # Здесь пишем код
 class PublicTransport:  # базовый класс транспорта
-    def __init__(self, brand, engine_power, year, color, max_speed):  # конструктор класса
+    def __init__(self, brand, engine_power, year, color, max_speed):
+        """конструктор класса"""
         self.brand = brand
         self._engine_power = engine_power
         self.year = year
         self.color = color
         self.max_speed = max_speed
 
-    @property  # Возвращает полную информацию о транспорте
+    @property
     def info(self):
+        """Возвращает полную информацию о транспорте"""
         return '{brand}, {color}, {year}, {engine_power}'.format(brand=self.brand, color=self.color, year=self.year, engine_power=self._engine_power)
 
 
 class Bus(PublicTransport):  # класс автобуса
-    def __init__(self, brand, engine_power, year, color, max_speed, passengers, park, fare):  # конструктор класса
+    def __init__(self, brand, engine_power, year, color, max_speed, passengers, park, fare):
+        """конструктор класса"""
         super().__init__(brand, engine_power, year, color, max_speed)
         self.passengers = passengers
         self.__park = park
         self._fare = fare
 
-    @property  # Возвращает номер парка приписки автобуса
+    @property
     def park(self):
+        """Возвращает номер парка приписки автобуса"""
         return self.park
 
-    @park.setter  # Изменяет номер парка приписки автобуса
+    @park.setter
     def park(self, value):
+        """Изменяет номер парка приписки автобуса"""
         assert 1000 <= value <= 9999, "Так нельзя"
         self.__park = value
 
 
 class Tram(PublicTransport):  # класс трамвая
-    def __init__(self, brand, engine_power, year, color, max_speed, route, path, fare):  # конструктор класса
+    def __init__(self, brand, engine_power, year, color, max_speed, route, path, fare):
+        """конструктор класса"""
         super().__init__(brand, engine_power, year, color, max_speed)
         self.__route = route
         self.path = path
         self._fare = fare
 
-    @property  # Вычисляет время прохождения маршрута трамваем
+    @property
     def how_long(self):
+        """Вычисляет время прохождения маршрута трамваем"""
         return self.max_speed / (4 * self.path)
 
 

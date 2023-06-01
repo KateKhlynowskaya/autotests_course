@@ -23,19 +23,23 @@
 
 # Здесь пишем код
 class PersonInfo:
-    def __init__(self, name, age, *subdivisions):  # конструктор класса
+    def __init__(self, name, age, *subdivisions):
+        """конструктор класса"""
         self.name = name
         self.age = age
         self.subdivisions = subdivisions
 
-    def short_name(self):  # метод для получения фамилии и имени в сокращенном виде
+    def short_name(self):
+        """метод для получения фамилии и имени в сокращенном виде"""
         first_last_name = self.name.split(' ')
         return '{} {}.'.format(first_last_name[1], first_last_name[0][0])
 
-    def path_deps(self):  # метод для получения пути подразделения, начиная с головного
+    def path_deps(self):
+        """метод для получения пути подразделения, начиная с головного"""
         return ' --> '.join(self.subdivisions)
 
     def new_salary(self):  # метод для вычисления новой зп
+        """метод для вычисления новой зп"""
         array_dict = {}
         for a in ''.join(self.subdivisions):
             if a in array_dict:

@@ -14,19 +14,23 @@
 import math
 class Segment:
 
-    def __init__(self, point1, point2):  # конструктор класса
+    def __init__(self, point1, point2):
+        """конструктор класса"""
         self.point1 = point1
         self.point2 = point2
 
-    def length(self):  # метод для определения длины отрезка
+    def length(self):
+        """метод для определения длины отрезка"""
         dx = self.point2[0] - self.point1[0]
         dy = self.point2[1] - self.point1[1]
         return round(math.sqrt(dx * dx + dy * dy), 2)
 
-    def x_axis_intersection(self):  # метод вычисления, пересекает ли отрезок ось абцисс
+    def x_axis_intersection(self):
+        """метод вычисления, пересекает ли отрезок ось абцисс"""
         return self.point1[1] * self.point2[1] < 0
 
-    def y_axis_intersection(self):  # метод вычисления, пересекает ли отрезок ось ординат
+    def y_axis_intersection(self):
+        """метод вычисления, пересекает ли отрезок ось ординат"""
         return self.point1[0] * self.point2[0] < 0
 
 
