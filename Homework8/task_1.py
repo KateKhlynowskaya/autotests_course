@@ -28,9 +28,11 @@ def treatment_sum(our_tuple):
         raise Exception('Много данных')
 
     try:
-        return our_tuple[0] + our_tuple[1]
+        tuple_sum = our_tuple[0] + our_tuple[1]
     except Exception:
         return 'Нельзя сложить эти данные'
+
+    return tuple_sum
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 

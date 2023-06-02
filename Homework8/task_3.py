@@ -12,10 +12,11 @@
 def segment(a, b):
     """метод суммирования координат"""
     try:
-        return a[0] + a[1] + b[0] + b[1]
+        segments_sum = a[0] + a[1] + b[0] + b[1]
     except Exception as e:
-        return "".join(reversed(list(str(e))))
+        return str(e)[::-1]
 
+    return segments_sum
 
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
