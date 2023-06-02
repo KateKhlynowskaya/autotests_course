@@ -23,8 +23,8 @@
 
 # Здесь пишем код
 class PersonInfo:
+    """"класс для описания сотрудника"""
     def __init__(self, name, age, *subdivisions):
-        """конструктор класса"""
         self.name = name
         self.age = age
         self.subdivisions = subdivisions
@@ -38,7 +38,7 @@ class PersonInfo:
         """метод для получения пути подразделения, начиная с головного"""
         return ' --> '.join(self.subdivisions)
 
-    def new_salary(self):  # метод для вычисления новой зп
+    def new_salary(self):
         """метод для вычисления новой зп"""
         array_dict = {}
         for a in ''.join(self.subdivisions):

@@ -12,10 +12,12 @@
 # Здесь пишем код
 
 import math
+
+
 class Segment:
+    """Класс для описания отрезка"""
 
     def __init__(self, point1, point2):
-        """конструктор класса"""
         self.point1 = point1
         self.point2 = point2
 

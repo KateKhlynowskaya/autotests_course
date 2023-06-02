@@ -24,9 +24,9 @@
 # У класса должно быть СВОЙСТВО how_long, которое вычисляет время прохождения маршрута по формуле max_speed/(4*path)
 
 # Здесь пишем код
-class PublicTransport:  # базовый класс транспорта
+class PublicTransport:
+    """"Базовый класс описывающий публичный транспорт"""
     def __init__(self, brand, engine_power, year, color, max_speed):
-        """конструктор класса"""
         self.brand = brand
         self._engine_power = engine_power
         self.year = year
@@ -39,9 +39,9 @@ class PublicTransport:  # базовый класс транспорта
         return '{brand}, {color}, {year}, {engine_power}'.format(brand=self.brand, color=self.color, year=self.year, engine_power=self._engine_power)
 
 
-class Bus(PublicTransport):  # класс автобуса
+class Bus(PublicTransport):
+    """"класс автобуса"""
     def __init__(self, brand, engine_power, year, color, max_speed, passengers, park, fare):
-        """конструктор класса"""
         super().__init__(brand, engine_power, year, color, max_speed)
         self.passengers = passengers
         self.__park = park
@@ -59,9 +59,9 @@ class Bus(PublicTransport):  # класс автобуса
         self.__park = value
 
 
-class Tram(PublicTransport):  # класс трамвая
+class Tram(PublicTransport):
+    """"класс трамвая"""
     def __init__(self, brand, engine_power, year, color, max_speed, route, path, fare):
-        """конструктор класса"""
         super().__init__(brand, engine_power, year, color, max_speed)
         self.__route = route
         self.path = path
