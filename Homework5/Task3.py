@@ -18,6 +18,7 @@
 #
 
 def everything_for_your_cat(cats_data):
+    """"оптимизация хранения данных о котах и их владельцах"""
     our_str = ''
     dkt = {}
     for i in cats_data:

@@ -6,6 +6,7 @@
 # 'letter' --> l_1e_1t_1t_2e_2_r_1
 
 def repeats(our_str):
+    """"функция для подсчета количества символов"""
     new_str = ''
     dct = {}
     for i in our_str:

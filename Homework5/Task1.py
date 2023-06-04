@@ -7,6 +7,7 @@
 
 
 def letter_stat(our_str):
+    """функция для вывода количества букв в строке"""
     letters_dict = {}
     for i in our_str:
         if not letters_dict.get(i):
