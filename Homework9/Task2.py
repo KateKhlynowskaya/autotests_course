@@ -35,11 +35,12 @@ import datetime
 
 
 def func_log(file_log='log.txt'):
+    """"Декоратор для логирования вызова функции"""
     def wrapper_1(func):
         def wrapper_2(*args, **kwargs):
             with open(file_log, 'a', encoding='utf-8') as file:
                 file.write('{fname} вызвана {date}\n'.format(fname=func.__name__,
-                                                           date=datetime.datetime.now().strftime('%d.%m %H:%M:%S')))
+                                                          date=datetime.datetime.now().strftime('%d.%m %H:%M:%S')))
                 func(*args, **kwargs)
                 print("Работа после вызова функции")
 
