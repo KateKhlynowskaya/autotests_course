@@ -42,7 +42,6 @@ def func_log(file_log='log.txt'):
                 file.write('{fname} вызвана {date}\n'.format(fname=func.__name__,
                                                           date=datetime.datetime.now().strftime('%d.%m %H:%M:%S')))
                 func(*args, **kwargs)
-                print("Работа после вызова функции")
 
         return wrapper_2
     return wrapper_1
@@ -50,11 +49,13 @@ def func_log(file_log='log.txt'):
 
 @func_log()
 def func1():
+    """"первая тестовая функция для вывода строки в консоль"""
     print("s")
 
 
 @func_log('func2.txt')
 def func2():
+    """"вторая тестовая функция для вывода строки в консоль"""
     print("ss")
 
 func1()
