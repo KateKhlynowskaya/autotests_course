@@ -7,8 +7,8 @@ sbis_title = 'СБИС — экосистема для бизнеса: учет,
 driver = webdriver.Chrome()
 try:
     driver.get(sbis_website)
-    assert driver.current_url == sbis_website, 'Не верный адрес сайта'
-    assert driver.title == sbis_title, 'Не верный заголовок'
+    assert driver.current_url == sbis_website, 'Неверный адрес сайта'
+    assert driver.title == sbis_title, 'Неверный заголовок'
     contact_button = driver.find_element(By.CSS_SELECTOR, 'a[href="/contacts"]')
     assert contact_button.text == 'Контакты'
     assert contact_button.is_displayed()

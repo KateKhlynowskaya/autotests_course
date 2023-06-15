@@ -10,8 +10,8 @@ try:
     driver.get(sbis_website)
     driver.maximize_window()
     sleep(2)
-    assert driver.current_url == sbis_website, 'Не верный адрес сайта'
-    assert driver.title == sbis_title, 'Не верный заголовок'
+    assert driver.current_url == sbis_website, 'Неверный адрес сайта'
+    assert driver.title == sbis_title, 'Неверный заголовок'
 
     login = driver.find_element(By.CSS_SELECTOR, '[name="Login"]')
     login.send_keys('бохохо', Keys.ENTER)
