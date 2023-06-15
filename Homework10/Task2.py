@@ -35,6 +35,7 @@ def test_negative_nums():
     assert result == 0.5
 
 
+@pytest.mark.custom
 def test_nums_and_letter():
     try:
         all_division(20, 30, 20, 23, 234234, 234, 234234, "2")
@@ -42,6 +43,7 @@ def test_nums_and_letter():
         assert isinstance(e, TypeError)
 
 
+@pytest.mark.custom
 def test_zero():
     try:
         all_division(2, 0)
