@@ -11,24 +11,21 @@ try:
     assert driver.title == sbis_title, 'Неверный заголовок'
     contact_button = driver.find_element(By.CSS_SELECTOR, 'a[href="/contacts"]')
     assert contact_button.text == 'Контакты'
-    assert contact_button.is_displayed()
     contact_button.click()
 
-    banner_tensor = driver.find_element(By.CSS_SELECTOR, '#contacts_clients a[title="tensor.ru"]')
-    assert banner_tensor.is_displayed()
+    banner_tensor = driver.find_element(By.CSS_SELECTOR, '.sbisru-Contacts__logo-tensor')
     banner_tensor.click()
 
     driver.switch_to.window(driver.window_handles[1])
     line = driver.find_element(By.CSS_SELECTOR, '.tensor_ru-CookieAgreement__close')
-    assert line.is_displayed()
     line.click()
 
-    news_banner = driver.find_element(By.CSS_SELECTOR, '.tensor_ru-Index__block4-bg')
-    assert news_banner.is_displayed()
-    string_details = driver.find_element(By.CSS_SELECTOR, '.tensor_ru-Index__block4-content a[href="/about"]')
-    assert string_details.is_displayed()
+    news_list = driver.find_elements(By.CSS_SELECTOR, '.tensor_ru-Index__card')
+    power_people = news_list[1]
+    assert power_people.find_element(By.CSS_SELECTOR, '.tensor_ru-Index__card-title').text == 'Сила в людях'
+
+    string_details = power_people.find_element(By.CSS_SELECTOR, '.tensor_ru-link')
     string_details.click()
-    
     url_about = 'https://tensor.ru/about'
     assert driver.current_url == url_about
 finally:
